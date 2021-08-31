@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('handle-payment', 'PayPalPaymentController@handlePayment')->name('make.payment');
+Route::get('cancel-payment', 'PayPalPaymentController@handlePayment')->name('cancel.payment');
+Route::get('payment-success', 'PayPalPaymentController@handlePayment')->name('success.payment');
