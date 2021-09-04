@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use srmklive\Paypal\Services\ExpressCheckout;
+use Srmklive\Paypal\Services\ExpressCheckout;
 
 class PaypalPaymentController extends Controller
 {
@@ -21,8 +21,8 @@ class PaypalPaymentController extends Controller
         ];
         $product['invoice_id'] = 1;
         $product['invoice_description'] = "Order #{$product['invoice_id']} Bill";
-        $product['return_url'] = route(success.payment);
-        $product['cancel_url'] = route(cancel.payment);
+        $product['return_url'] = route('success.payment');
+        $product['cancel_url'] = route('cancel.payment');
         $product['total'] = 3000;
 
         $paypalModule = new ExpressCheckout;

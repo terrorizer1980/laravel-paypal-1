@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('handle-payment', 'PayPalPaymentController@handlePayment')->name('make.payment');
-Route::get('cancel-payment', 'PayPalPaymentController@paymentCancel')->name('cancel.payment');
-Route::get('payment-success', 'PayPalPaymentController@paymentSuccess')->name('success.payment');
+Route::get('/handle-payment', 'App\Http\Controllers\PaypalPaymentController@handlePayment')->name('make.payment');
+Route::get('cancel-payment', 'App\Http\Controllers\PaypalPaymentController@paymentCancel')->name('cancel.payment');
+Route::get('payment-success', 'App\Http\Controllers\PaypalPaymentController@paymentSuccess')->name('success.payment');
